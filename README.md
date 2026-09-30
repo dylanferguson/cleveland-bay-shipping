@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="docs/banner.png" alt="A round toy diorama of Cleveland Bay, Townsville and Magnetic Island with live ships" width="100%" />
+  <a href="https://cleveland-bay-shipping.dylanferguson.co/">
+    <img src="docs/banner.png" alt="A round toy diorama of Cleveland Bay, Townsville and Magnetic Island with live ships" width="100%" />
+  </a>
 </p>
 
 # Cleveland Bay Shipping
