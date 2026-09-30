@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cleveland Bay Shipping</title>
+    <meta name="description" content="Live AIS shipping in Cleveland Bay, Townsville, rendered in three.js." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="panel title">
+      <h1>Cleveland Bay</h1>
+      <p>Townsville &amp; Magnetic Island · live AIS</p>
+      <span id="status" class="status" data-status="connecting">Connecting…</span>
+    </header>
+
+    <aside class="panel ships">
+      <h2>Vessels <span id="ship-count">0</span></h2>
+      <ul id="ship-list"></ul>
+    </aside>
+
+    <section id="ship-card" class="panel card" hidden></section>
+
+    <div id="loading">Building a tiny Townsville…</div>
+
+    <footer class="credits">
+      AIS: <a href="https://aisstream.io" target="_blank" rel="noopener">aisstream.io</a> ·
+      Elevation: <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">Terrain Tiles</a>
+      (SRTM, ETOPO1, GMTED) · Ships not to scale
+    </footer>
+  </body>
+</html>
