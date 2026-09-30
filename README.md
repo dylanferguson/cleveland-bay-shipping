@@ -1,6 +1,10 @@
+<p align="center">
+  <img src="docs/banner.png" alt="A round toy diorama of Cleveland Bay, Townsville and Magnetic Island with live ships" width="100%" />
+</p>
+
 # Cleveland Bay Shipping
 
-A three.js diorama of Cleveland Bay, Townsville, and Magnetic Island, with live ship positions from [aisstream.io](https://aisstream.io). Lighting follows the real sun over Townsville.
+A toy-like three.js diorama of Cleveland Bay, Townsville, and Magnetic Island, with live ship positions from [aisstream.io](https://aisstream.io). Lighting follows the real sun over Townsville.
 
 - `public/` is the static frontend: plain ES modules, with three.js loaded from a CDN through an import map. There's no build step.
 - `worker/` is a Cloudflare Worker with one Durable Object (`AisHub`). It holds a single aisstream.io WebSocket, keeps recent ship state, and fans updates out to browsers on `/api/stream`. `/api/ships` returns the current ships as JSON.

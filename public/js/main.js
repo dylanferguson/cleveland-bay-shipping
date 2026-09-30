@@ -32,7 +32,7 @@ renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.setSize(innerWidth, innerHeight);
 renderer.toneMapping = THREE.NeutralToneMapping;
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.type = THREE.PCFShadowMap;
 document.body.prepend(renderer.domElement);
 
 const labelRenderer = new CSS2DRenderer();
@@ -203,12 +203,14 @@ function followSelected(dt) {
 
 // --- Loop ---
 
-const clock = new THREE.Clock();
+const timer = new THREE.Timer();
+timer.connect(document); // pauses while the tab is hidden
 let lastSkyUpdate = -Infinity;
 
-renderer.setAnimationLoop(() => {
-  const dt = Math.min(clock.getDelta(), 0.1);
-  const elapsed = clock.elapsedTime;
+renderer.setAnimationLoop((timestamp) => {
+  timer.update(timestamp);
+  const dt = Math.min(timer.getDelta(), 0.1);
+  const elapsed = timer.getElapsed();
   if (elapsed - lastSkyUpdate > 10) {
     sky.update(new Date());
     lastSkyUpdate = elapsed;
